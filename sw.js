@@ -1,5 +1,11 @@
-const CACHE = 'jessie-v1';
-const ASSETS = ['/', '/index.html', '/manifest.json', '/icon-192.png', '/icon-512.png'];
+const CACHE = 'jessie-v2';
+const ASSETS = [
+  '/jessie/',
+  '/jessie/index.html',
+  '/jessie/manifest.json',
+  '/jessie/icon-192.png',
+  '/jessie/icon-512.png'
+];
 
 self.addEventListener('install', e => {
   e.waitUntil(caches.open(CACHE).then(c => c.addAll(ASSETS)).then(() => self.skipWaiting()));
